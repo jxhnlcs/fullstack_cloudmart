@@ -61,6 +61,7 @@ A infraestrutura do **DynamoDB** será provisionada utilizando **Terraform**. Si
    cd ../backend
    ```
 2. Crie o arquivo **`.env`** e preencha com suas variáveis de ambiente parecido como está no .env.example :
+   
    **Conteúdo do `.env`**:
    ```
    PORT=5000
@@ -72,11 +73,11 @@ A infraestrutura do **DynamoDB** será provisionada utilizando **Terraform**. Si
    OPENAI_API_KEY=
    OPENAI_ASSISTANT_ID=
    ```
-3. Construa a imagem Docker do backend:
+4. Construa a imagem Docker do backend:
    ```bash
    docker build -t cloudmart-backend .
    ```
-4. Execute o container:
+5. Execute o container:
    ```bash
    docker run -d -p 5000:5000 --env-file .env cloudmart-backend
    ```
@@ -89,15 +90,16 @@ A infraestrutura do **DynamoDB** será provisionada utilizando **Terraform**. Si
    cd ../frontend
    ```
 2. Crie o arquivo **`.env`** e preencha com suas variáveis de ambiente parecido como está no .env.example:
+   
    **Conteúdo do `.env`**:
    ```
    VITE_API_BASE_URL=http://<seu-ip>/api
    ```
-3. Construa a imagem Docker do frontend:
+4. Construa a imagem Docker do frontend:
    ```bash
    docker build -t cloudmart-frontend .
    ```
-4. Execute o container:
+5. Execute o container:
    ```bash
    docker run -d -p 5001:5001 cloudmart-frontend
    ```
